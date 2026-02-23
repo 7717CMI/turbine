@@ -14,7 +14,7 @@ import type { ComparisonData, DataRecord, FilterState } from './types'
  */
 export function getTopRegionsByMarketValue(
   data: ComparisonData | null,
-  year: number = 2023,
+  year: number = 2026,
   topN: number = 3
 ): string[] {
   if (!data) return []
@@ -200,7 +200,7 @@ export function getTopCountriesByCAGR(
  * @returns Partial FilterState with dynamic values
  */
 export function createTopMarketFilters(data: ComparisonData | null): Partial<FilterState> {
-  const topRegions = getTopRegionsByMarketValue(data, 2023, 3)
+  const topRegions = getTopRegionsByMarketValue(data, 2026, 3)
   const firstSegmentType = getFirstSegmentType(data)
   const firstLevelSegments = firstSegmentType
     ? getFirstLevelSegments(data, firstSegmentType)
@@ -210,8 +210,8 @@ export function createTopMarketFilters(data: ComparisonData | null): Partial<Fil
     viewMode: 'geography-mode', // Geography on X-axis, segments as series
     geographies: topRegions,
     segments: firstLevelSegments,
-    segmentType: firstSegmentType || 'By Technology',
-    yearRange: [2023, 2027],
+    segmentType: firstSegmentType || 'By Turbine Type',
+    yearRange: [2026, 2030],
     dataType: 'value'
   }
 }
@@ -223,7 +223,7 @@ export function createTopMarketFilters(data: ComparisonData | null): Partial<Fil
 export function createGrowthLeadersFilters(data: ComparisonData | null): Partial<FilterState> {
   if (!data) return {
     viewMode: 'geography-mode',
-    yearRange: [2025, 2031],
+    yearRange: [2027, 2033],
     dataType: 'value'
   }
 
@@ -238,8 +238,8 @@ export function createGrowthLeadersFilters(data: ComparisonData | null): Partial
     viewMode: 'geography-mode', // Geography on X-axis, segments as series
     geographies: topRegions,
     segments: firstLevelSegments,
-    segmentType: firstSegmentType || 'By Technology',
-    yearRange: [2025, 2031],
+    segmentType: firstSegmentType || 'By Turbine Type',
+    yearRange: [2027, 2033],
     dataType: 'value'
   }
 }
@@ -251,7 +251,7 @@ export function createGrowthLeadersFilters(data: ComparisonData | null): Partial
 export function createEmergingMarketsFilters(data: ComparisonData | null): Partial<FilterState> {
   if (!data) return {
     viewMode: 'geography-mode',
-    yearRange: [2025, 2031],
+    yearRange: [2027, 2033],
     dataType: 'value'
   }
 
@@ -266,8 +266,8 @@ export function createEmergingMarketsFilters(data: ComparisonData | null): Parti
     viewMode: 'geography-mode', // Geography on X-axis, segments as series
     geographies: topCountries,
     segments: firstLevelSegments,
-    segmentType: firstSegmentType || 'By Technology',
-    yearRange: [2025, 2031],
+    segmentType: firstSegmentType || 'By Turbine Type',
+    yearRange: [2027, 2033],
     dataType: 'value'
   }
 }

@@ -1152,8 +1152,8 @@ async function processSegmentTypeAsync(
           cagr = data.CAGR
         }
       } else {
-        // Calculate CAGR from base year (2023) to forecast year
-        const cagrStartYear = allYears[0] + 4 // Base year = 2023 for 2019-2031 data
+        // Calculate CAGR from base year (2026) to forecast year
+        const cagrStartYear = allYears[0] + 5 // Base year = 2026 for 2021-2033 data
         const cagrEndYear = allYears[allYears.length - 1]
         const startVal = timeSeries[cagrStartYear] || 0
         const endVal = timeSeries[cagrEndYear] || 0
@@ -1233,7 +1233,7 @@ export async function processJsonDataAsync(
     }
     const startYear = Math.min(...allYears)
     const forecastYear = Math.max(...allYears)
-    const baseYear = startYear + 4 // Base year = 2023 for 2019-2031 data
+    const baseYear = startYear + 5 // Base year = 2026 for 2021-2033 data
     // Historical/Forecast split at midpoint (2025/2026), independent of base year
     const historicalEndYear = Math.floor((startYear + forecastYear) / 2) // 2025
     console.log(`Years: ${startYear} to ${forecastYear}, base: ${baseYear}, historical end: ${historicalEndYear}`)
@@ -1453,7 +1453,7 @@ export async function processJsonDataAsync(
     
     // Build metadata
     const metadata: Metadata = {
-      market_name: 'Solar Micro Inverter Market',
+      market_name: 'Steam Turbine Market',
       market_type: 'Market Analysis',
       industry: 'Energy & Power',
       years: allYears,

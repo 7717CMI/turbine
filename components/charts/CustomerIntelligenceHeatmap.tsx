@@ -189,9 +189,10 @@ export function CustomerIntelligenceHeatmap({ title, height = 600, filePath }: C
     ]
     
     const defaultSegments = [
-      'Residential',
-      'Commercial and Industrial',
-      'Utility-scale'
+      'Impulse Turbines',
+      'Reaction Turbines',
+      'Combined Cycle Turbines',
+      'Cogeneration Turbines'
     ]
 
     // First, try to extract regions and segments from loaded customer data
@@ -212,8 +213,9 @@ export function CustomerIntelligenceHeatmap({ title, height = 600, filePath }: C
       // Get regions from dimensions
       const allRegions = data.dimensions.geographies.regions || defaultRegions
       
-      // Get end user segments from dimensions
-      const endUserDimension = data.dimensions.segments['By End-User']
+      // Get segments from first available dimension
+      const firstSegType = Object.keys(data.dimensions.segments)[0] || 'By Turbine Type'
+      const endUserDimension = data.dimensions.segments[firstSegType]
       const segments = endUserDimension?.items || []
 
       const allSegments = segments.length > 0 ? [...segments] : [...defaultSegments]

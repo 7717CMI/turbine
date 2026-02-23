@@ -18,7 +18,7 @@ interface SelectedSegmentItem {
 export function EnhancedFilterPanel() {
   const { data, filters, updateFilters } = useDashboardStore()
   const [selectedSegmentType, setSelectedSegmentType] = useState<string>(
-    filters.segmentType || (data?.dimensions?.segments ? Object.keys(data.dimensions.segments)[0] : 'By Technology')
+    filters.segmentType || (data?.dimensions?.segments ? Object.keys(data.dimensions.segments)[0] : 'By Turbine Type')
   )
   const [selectedSegments, setSelectedSegments] = useState<SelectedSegmentItem[]>([])
   const [currentSegmentSelection, setCurrentSegmentSelection] = useState<string>('')

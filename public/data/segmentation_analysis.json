@@ -1,24 +1,33 @@
 {
   "Global": {
-    "By Technology": {
-      "Single-Phase Micro Inverters": {},
-      "Three-Phase Micro Inverters": {}
+    "By Turbine Type": {
+      "Impulse Turbines": {},
+      "Reaction Turbines": {},
+      "Combined Cycle Turbines": {},
+      "Cogeneration Turbines": {}
     },
-    "By Power Rating": {
-      "<250 W": {},
-      "250 W - 500 W": {},
-      ">500 W": {}
+    "By Rated Capacity": {
+      "Below 70 MW": {},
+      "70 MW to 150 MW": {},
+      "Above 150 MW": {}
     },
-    "By Provider": {
-      "Direct Sales through OEM": {},
-      "Distributors and Wholesalers": {},
-      "Retailers": {},
-      "Solar Installers and Contractors": {}
+    "By Exhaust Type": {
+      "Condensing Steam Turbines": {},
+      "Back Pressure Steam Turbines": {}
     },
-    "By End-User": {
-      "Residential": {},
-      "Commercial and Industrial": {},
-      "Utility-scale": {}
+    "By Industry Vertical": {
+      "Power Generation": {
+        "Thermal Power Plants": {},
+        "Nuclear Power Plants": {},
+        "Geothermal": {},
+        "Solar Thermal": {},
+        "Biomass & Waste-to-Energy": {}
+      },
+      "Oil & Gas": {},
+      "Chemicals": {},
+      "Refineries & Petrochemicals": {},
+      "Sugar & Food Processing": {},
+      "Others (Marine, Steel & Metallurgy, Pulp & Paper, etc.)": {}
     },
     "By Region": {
       "North America": {
